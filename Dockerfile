@@ -27,7 +27,7 @@ RUN echo "FinTech{f1l3_r34d1ng_thr0ugh_lf1_3xpl01t}" > /etc/flag && \
 
 # Create non-root user first
 RUN useradd -m -u 1000 ctfuser && \
-    echo "ctfuser:fintechctf2025" | chpasswd && \
+    echo "ctfuser:fintechctf2026" | chpasswd && \
     usermod -aG sudo ctfuser
 
 # Generate SSH keys for ctfuser

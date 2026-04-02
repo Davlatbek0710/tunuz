@@ -4,7 +4,7 @@ from functools import wraps
 import hashlib
 
 app = Flask(__name__)
-app.secret_key = 'ctf_lfi_secret_2025'
+app.secret_key = 'ctf_lfi_secret_2026'
 
 # Flag location
 FLAG_FILE = '/etc/flag'
