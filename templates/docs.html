@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Hujjatlar - TUN.UZ{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="container">
+        <div class="page-header">
+            <h1>Hujjatlar</h1>
+            <p>Qo'llanmalar va resurslar</p>
+        </div>
+
+        <div class="content-grid">
+            <div class="content-card">
+                <h3>Boshlash</h3>
+                <p>Yangi foydalanuvchilar uchun qo'llanma. Asosiy funksiyalar bilan tanishing.</p>
+                <a href="/documentation/view?file=/app/docs/readme.txt" class="card-link">O'qish →</a>
+            </div>
+
+            <div class="content-card">
+                <h3>API hujjatlari</h3>
+                <p>Dasturchilar uchun API qo'llanmasi va namunalar.</p>
+                <a href="/documentation/view?file=/app/docs/api-guide.txt" class="card-link">O'qish →</a>
+            </div>
+
+            <div class="content-card">
+                <h3>Xavfsizlik siyosati</h3>
+                <p>Ma'lumotlar xavfsizligi va maxfiylik qoidalari.</p>
+                <a href="/documentation/view?file=/app/docs/security-policy.txt" class="card-link">O'qish →</a>
+            </div>
+
+            <div class="content-card">
+                <h3>Yangilanishlar tarixi</h3>
+                <p>So'nggi yangilanishlar va o'zgarishlar ro'yxati.</p>
+                <a href="/documentation/view?file=/app/docs/changelog.txt" class="card-link">O'qish →</a>
+            </div>
+
+            <div class="content-card">
+                <h3>Eng yaxshi amaliyotlar</h3>
+                <p>Jurnalistika sohasidagi eng yaxshi amaliyotlar.</p>
+                <a href="#" class="card-link">Tez orada</a>
+            </div>
+
+            <div class="content-card">
+                <h3>Muammolarni hal qilish</h3>
+                <p>Ko'p uchraydigan muammolar va ularning yechimlari.</p>
+                <a href="#" class="card-link">Tez orada</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

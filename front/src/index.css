@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Blue - Trust & Media */
+    --primary: 210 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 210 100% 25%;
+    --primary-light: 210 80% 50%;
+    
+    /* Breaking News - Dark Blue Accent */
+    --breaking: 210 100% 25%;
+    --breaking-foreground: 0 0% 100%;
+    
+    /* Navy for depth */
+    --navy: 215 50% 15%;
+    --navy-foreground: 0 0% 95%;
+    
+    /* Backgrounds */
+    --background: 0 0% 98%;
+    --foreground: 215 25% 15%;
+    
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+    
+    /* Secondary - Subtle Gray */
+    --secondary: 210 15% 95%;
+    --secondary-foreground: 215 25% 20%;
+    
+    /* Muted elements */
+    --muted: 210 10% 92%;
+    --muted-foreground: 215 15% 45%;
+    
+    /* Accent - Light Blue Tint */
+    --accent: 210 60% 95%;
+    --accent-foreground: 210 100% 30%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders */
+    --border: 210 20% 88%;
+    --border-strong: 210 20% 75%;
+    --input: 210 20% 88%;
+    --ring: 210 100% 35%;
+    
+    --radius: 0.375rem;
+    
+    /* Category Colors */
+    --politics: 210 100% 35%;
+    --economy: 145 60% 40%;
+    --society: 280 60% 50%;
+    --sports: 25 100% 50%;
+    --world: 200 80% 45%;
+    --tech: 170 70% 40%;
+    --culture: 340 70% 50%;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.08), 0 2px 4px -2px hsl(215 25% 15% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.1), 0 4px 6px -4px hsl(215 25% 15% / 0.05);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 25% 15%;
+    --sidebar-primary: 210 100% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 60% 95%;
+    --sidebar-accent-foreground: 210 100% 30%;
+    --sidebar-border: 210 20% 88%;
+    --sidebar-ring: 210 100% 35%;
+  }
+
+  .dark {
+    --primary: 210 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 210 80% 45%;
+    --primary-light: 210 70% 65%;
+    
+    --breaking: 210 80% 45%;
+    --breaking-foreground: 0 0% 100%;
+    
+    --navy: 215 40% 12%;
+    --navy-foreground: 0 0% 95%;
+    
+    --background: 215 35% 10%;
+    --foreground: 210 20% 95%;
+    
+    --card: 215 30% 14%;
+    --card-foreground: 210 20% 95%;
+    
+    --popover: 215 30% 14%;
+    --popover-foreground: 210 20% 95%;
+    
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 90%;
+    
+    --muted: 215 20% 20%;
+    --muted-foreground: 210 15% 60%;
+    
+    --accent: 210 40% 20%;
+    --accent-foreground: 210 80% 70%;
+    
+    --destructive: 0 62.8% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 215 25% 22%;
+    --border-strong: 215 25% 30%;
+    --input: 215 25% 22%;
+    --ring: 210 80% 55%;
+    
+    --sidebar-background: 215 30% 12%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 210 80% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 20%;
+    --sidebar-accent-foreground: 210 80% 70%;
+    --sidebar-border: 215 25% 22%;
+    --sidebar-ring: 210 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .news-title {
+    font-family: 'Merriweather', serif;
+    @apply font-bold leading-tight;
+  }
+  
+  .category-badge {
+    @apply inline-block px-2 py-0.5 text-xs font-semibold uppercase tracking-wider rounded;
+  }
+  
+  .category-politics {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .category-economy {
+    background-color: hsl(var(--economy));
+    @apply text-white;
+  }
+  
+  .category-society {
+    background-color: hsl(var(--society));
+    @apply text-white;
+  }
+  
+  .category-sports {
+    background-color: hsl(var(--sports));
+    @apply text-white;
+  }
+  
+  .category-world {
+    background-color: hsl(var(--world));
+    @apply text-white;
+  }
+  
+  .category-tech {
+    background-color: hsl(var(--tech));
+    @apply text-white;
+  }
+  
+  .category-culture {
+    background-color: hsl(var(--culture));
+    @apply text-white;
+  }
+}
+
+@layer utilities {
+  .breaking-ticker {
+    animation: ticker 30s linear infinite;
+  }
+  
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

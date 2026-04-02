@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Fayl yuklash - TUN.UZ{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="container">
+        <div class="page-header">
+            <h1>Fayl yuklash</h1>
+            <p>Hujjat va fayllarni yuklang</p>
+        </div>
+
+        <div class="upload-container">
+            <div class="upload-box">
+                <h3>Fayllarni bu yerga tashlang yoki tanlang</h3>
+                <p>Qo'llab-quvvatlanadigan formatlar: PDF, DOC, TXT, ZIP</p>
+                <form id="uploadForm" class="upload-form">
+                    <input type="file" id="fileInput" name="file" class="file-input">
+                    <button type="submit" class="btn btn-primary">Yuklash</button>
+                </form>
+                <div id="uploadStatus"></div>
+            </div>
+
+            <div class="upload-info">
+                <h3>Yuklash qoidalari</h3>
+                <ul>
+                    <li>Maksimal fayl hajmi: 50MB</li>
+                    <li>Fayllar avtomatik tekshiriladi</li>
+                    <li>Uzatish paytida shifrlangan</li>
+                    <li>30 kun saqlanadi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('uploadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const status = document.getElementById('uploadStatus');
+    status.innerHTML = '<p style="color: var(--economy); margin-top: 1rem;">✓ Fayl muvaffaqiyatli yuklandi (demo rejim)</p>';
+});
+</script>
+{% endblock %}

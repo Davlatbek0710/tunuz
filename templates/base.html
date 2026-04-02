@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TUN.UZ - O'zbekiston yangiliklari{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <span class="top-bar-date">
+                    {{ now().strftime('%A, %d %B %Y') if now is defined else 'Dushanba, 21 Dekabr 2024' }}
+                </span>
+                <button class="lang-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    UZ
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <div class="main-header">
+            <div class="container">
+                <a href="/" class="logo">
+                    <span class="logo-text">
+                        <span class="primary">TUN</span><span class="dark">.UZ</span>
+                    </span>
+                    <span class="logo-tagline">O'zbekiston<br>yangiliklari</span>
+                </a>
+
+                <div class="search-box">
+                    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="search" placeholder="Yangiliklar qidirish...">
+                </div>
+
+                <div class="header-actions">
+                    {% if session.get('user') %}
+                        <span style="color: var(--primary); font-weight: 500; margin-right: 1rem;">{{ session.get('user') }}</span>
+                        <a href="/logout" class="auth-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                            Chiqish
+                        </a>
+                    {% else %}
+                        <a href="/login" class="auth-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
+                            Kirish
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    {% if session.get('user') %}
+                        <li><a href="/dashboard">Bosh sahifa</a></li>
+                        <li><a href="/about">Biz haqimizda</a></li>
+                        <li><a href="/services">Xizmatlar</a></li>
+                        <li><a href="/docs">Hujjatlar</a></li>
+                        <li><a href="/team">Jamoa</a></li>
+                        <li><a href="/upload">Yuklash</a></li>
+                    {% else %}
+                        <li><a href="/">Yangiliklar</a></li>
+                        <li><a href="#">Siyosat</a></li>
+                        <li><a href="#">Iqtisodiyot</a></li>
+                        <li><a href="#">Jamiyat</a></li>
+                        <li><a href="#">Sport</a></li>
+                        <li><a href="#">Dunyo</a></li>
+                        <li><a href="#">Texnologiya</a></li>
+                        <li><a href="#">Madaniyat</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Brand -->
+                    <div class="footer-brand">
+                        <a href="/" class="logo">
+                            <span class="logo-text">
+                                <span class="primary">TUN</span><span class="dark">.UZ</span>
+                            </span>
+                        </a>
+                        <p>O'zbekiston yangiliklari portali. Ishonchli, dolzarb va ob'ektiv xabarlar manbai.</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="Telegram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" aria-label="YouTube">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- About Links -->
+                    <div class="footer-links">
+                        <h4>Biz haqimizda</h4>
+                        <ul>
+                            <li><a href="/about">Biz haqimizda</a></li>
+                            <li><a href="/team">Tahririyat</a></li>
+                            <li><a href="#">Bog'lanish</a></li>
+                            <li><a href="#">Reklama</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="footer-links">
+                        <h4>Bo'limlar</h4>
+                        <ul>
+                            <li><a href="#">Siyosat</a></li>
+                            <li><a href="#">Iqtisodiyot</a></li>
+                            <li><a href="#">Jamiyat</a></li>
+                            <li><a href="#">Sport</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal -->
+                    <div class="footer-links">
+                        <h4>Huquqiy</h4>
+                        <ul>
+                            <li><a href="#">Foydalanish shartlari</a></li>
+                            <li><a href="#">Maxfiylik siyosati</a></li>
+                            <li><a href="#">Huquqiy ma'lumot</a></li>
+                        </ul>
+                        <div class="footer-contact">
+                            <div>Tel: +998 71 123 45 67</div>
+                            <div>Email: info@tun.uz</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div>&copy; 2024 TUN.UZ — Barcha huquqlar himoyalangan</div>
+                <div>O'zbekiston Respublikasi OAV ro'yxatidan o'tgan №12345</div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

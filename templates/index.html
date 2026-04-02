@@ -1,0 +1,544 @@
+{% extends "base.html" %}
+
+{% block title %}TUN.UZ - O'zbekiston yangiliklari{% endblock %}
+
+{% block content %}
+<!-- Breaking News -->
+<div class="breaking-news">
+    <div class="container">
+        <div class="breaking-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            TEZKOR XABAR
+        </div>
+        <div class="breaking-ticker">
+            <div class="ticker-content">
+                <a href="#">TEZKOR: O'zbekistonda benzin narxlari bo'yicha yangi tartib e'lon qilindi</a>
+                <a href="#">TEZKOR: Toshkentda yomg'ir tufayli yo'llarda transport tirbandliklari yuzaga keldi</a>
+                <a href="#">TEZKOR: O'zbekiston va Yevroittifoq muzokaralari muvaffaqiyatli yakunlandi</a>
+                <a href="#">TEZKOR: Prezident yangi farmonga imzo chekdi</a>
+                <a href="#">TEZKOR: O'zbekistonda benzin narxlari bo'yicha yangi tartib e'lon qilindi</a>
+                <a href="#">TEZKOR: Toshkentda yomg'ir tufayli yo'llarda transport tirbandliklari yuzaga keldi</a>
+                <a href="#">TEZKOR: O'zbekiston va Yevroittifoq muzokaralari muvaffaqiyatli yakunlandi</a>
+                <a href="#">TEZKOR: Prezident yangi farmonga imzo chekdi</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Slider -->
+<section class="hero-slider">
+    <div class="hero-slide active">
+        <div class="hero-slide-bg">
+            <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?w=1200&h=600&fit=crop" alt="Benzin narxlari">
+        </div>
+        <div class="hero-slide-content container">
+            <div class="hero-slide-text">
+                <span class="category-badge iqtisodiyot">Iqtisodiyot</span>
+                <h2><a href="#">O'zbekistonda benzin narxlari bo'yicha yangi tartib e'lon qilindi</a></h2>
+                <p>Hukumat yoqilg'i bozorida narxlarni tartibga solish bo'yicha yangi qarorlar qabul qildi. Bu qaror aholining turmush darajasini yaxshilashga qaratilgan.</p>
+                <span class="time">2 soat oldin</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slide">
+        <div class="hero-slide-bg">
+            <img src="https://images.unsplash.com/photo-1534088568595-a066f410bcda?w=1200&h=600&fit=crop" alt="Yomg'ir">
+        </div>
+        <div class="hero-slide-content container">
+            <div class="hero-slide-text">
+                <span class="category-badge jamiyat">Jamiyat</span>
+                <h2><a href="#">Toshkentda yomg'ir tufayli yo'llarda transport tirbandliklari yuzaga keldi</a></h2>
+                <p>Poytaxtda kuchli yomg'ir natijasida bir qator yo'llarda suv to'planib qoldi. Shahar xizmatlari vaziyatni boshqarish uchun favqulodda rejimda ishlamoqda.</p>
+                <span class="time">3 soat oldin</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slide">
+        <div class="hero-slide-bg">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&h=600&fit=crop" alt="Futbol">
+        </div>
+        <div class="hero-slide-content container">
+            <div class="hero-slide-text">
+                <span class="category-badge sport">Sport</span>
+                <h2><a href="#">O'zbekiston futbol terma jamoasi Osiyo Kubogida muvaffaqiyat qozondi</a></h2>
+                <p>Milliy terma jamoamiz guruh bosqichida barcha o'yinlarni g'alaba bilan yakunlab, playoff bosqichiga chiqdi.</p>
+                <span class="time">5 soat oldin</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-slide">
+        <div class="hero-slide-bg">
+            <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=1200&h=600&fit=crop" alt="Iqtisodiyot">
+        </div>
+        <div class="hero-slide-content container">
+            <div class="hero-slide-text">
+                <span class="category-badge iqtisodiyot">Iqtisodiyot</span>
+                <h2><a href="#">2025-yilda O'zbekiston iqtisodiy o'sish prognozlari oshmoqda</a></h2>
+                <p>Xalqaro moliya institutlari O'zbekiston iqtisodiyotining barqaror o'sishini prognoz qilmoqda. YaIM o'sishi 6% dan oshishi kutilmoqda.</p>
+                <span class="time">6 soat oldin</span>
+            </div>
+        </div>
+    </div>
+
+    <button class="slider-nav prev" onclick="prevSlide()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <button class="slider-nav next" onclick="nextSlide()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+
+    <div class="slider-dots">
+        <button class="active" onclick="goToSlide(0)"></button>
+        <button onclick="goToSlide(1)"></button>
+        <button onclick="goToSlide(2)"></button>
+        <button onclick="goToSlide(3)"></button>
+    </div>
+</section>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="container">
+        <!-- Latest News -->
+        <section class="latest-news">
+            <div class="section-header">
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    So'nggi yangiliklar
+                </h2>
+                <a href="#">
+                    Barchasi
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </a>
+            </div>
+            <div class="latest-news-grid">
+                <article class="latest-news-item">
+                    <div class="dot"></div>
+                    <div>
+                        <h3><a href="#">Samarqandda xalqaro turizm forumi o'tkazildi</a></h3>
+                        <div class="meta">
+                            <span class="category jamiyat">Jamiyat</span>
+                            <span class="time">• 15 daqiqa oldin</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="latest-news-item">
+                    <div class="dot"></div>
+                    <div>
+                        <h3><a href="#">Oliy Majlis yangi qonun loyihasini tasdiqladi</a></h3>
+                        <div class="meta">
+                            <span class="category siyosat">Siyosat</span>
+                            <span class="time">• 32 daqiqa oldin</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="latest-news-item">
+                    <div class="dot"></div>
+                    <div>
+                        <h3><a href="#">Dollar kursi barqarorlashmoqda</a></h3>
+                        <div class="meta">
+                            <span class="category iqtisodiyot">Iqtisodiyot</span>
+                            <span class="time">• 1 soat oldin</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="latest-news-item">
+                    <div class="dot"></div>
+                    <div>
+                        <h3><a href="#">Toshkent viloyatida yangi korxona ochildi</a></h3>
+                        <div class="meta">
+                            <span class="category iqtisodiyot">Iqtisodiyot</span>
+                            <span class="time">• 1 soat oldin</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="latest-news-item">
+                    <div class="dot"></div>
+                    <div>
+                        <h3><a href="#">Maktablarda qishki ta'til e'lon qilindi</a></h3>
+                        <div class="meta">
+                            <span class="category jamiyat">Jamiyat</span>
+                            <span class="time">• 2 soat oldin</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="latest-news-item">
+                    <div class="dot"></div>
+                    <div>
+                        <h3><a href="#">Namangan shahri rivojlanish rejasi tasdiqlandi</a></h3>
+                        <div class="meta">
+                            <span class="category jamiyat">Jamiyat</span>
+                            <span class="time">• 2 soat oldin</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="content-wrapper">
+            <!-- Main Content Area -->
+            <div class="main-area">
+                <!-- Siyosat Section -->
+                <section class="category-section">
+                    <div class="category-header">
+                        <h2>
+                            <span class="indicator siyosat"></span>
+                            Siyosat
+                        </h2>
+                        <a href="#">
+                            Barchasi
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+                    </div>
+                    <div class="category-grid">
+                        <article class="news-card">
+                            <div class="news-card-image">
+                                <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop" alt="Yevroittifoq muzokaralari">
+                            </div>
+                            <div class="news-card-content">
+                                <span class="category-badge siyosat">Siyosat</span>
+                                <h3><a href="#">O'zbekiston va Yevroittifoq muzokaralari davom etmoqda</a></h3>
+                                <p class="excerpt">Tashqi ishlar vazirligi ma'lumotiga ko'ra, ikki tomonlama hamkorlik yangi bosqichga kirmoqda.</p>
+                                <div class="meta">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    2 soat oldin
+                                </div>
+                            </div>
+                        </article>
+                        <div class="side-news">
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=300&h=200&fit=crop" alt="Parlament">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge siyosat">Siyosat</span>
+                                    <h3><a href="#">Parlament yangi qonun loyihasini muhokama qildi</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        3 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?w=300&h=200&fit=crop" alt="Hokimlar">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge siyosat">Siyosat</span>
+                                    <h3><a href="#">Hokimlar bilan uchrashuv bo'lib o'tdi</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        4 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300&h=200&fit=crop" alt="Davlat dasturi">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge siyosat">Siyosat</span>
+                                    <h3><a href="#">Davlat dasturi doirasida yangi ishlar</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        5 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Iqtisodiyot Section -->
+                <section class="category-section">
+                    <div class="category-header">
+                        <h2>
+                            <span class="indicator iqtisodiyot"></span>
+                            Iqtisodiyot
+                        </h2>
+                        <a href="#">
+                            Barchasi
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+                    </div>
+                    <div class="category-grid">
+                        <article class="news-card">
+                            <div class="news-card-image">
+                                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop" alt="Iqtisodiy o'sish">
+                            </div>
+                            <div class="news-card-content">
+                                <span class="category-badge iqtisodiyot">Iqtisodiyot</span>
+                                <h3><a href="#">2025-yilda O'zbekiston iqtisodiy o'sish prognozlari oshmoqda</a></h3>
+                                <p class="excerpt">Xalqaro valyuta jamg'armasi va Jahon banki mutaxassislarining fikriga ko'ra, mamlakatimiz iqtisodiyoti barqaror rivojlanishni davom ettirmoqda.</p>
+                                <div class="meta">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    1 soat oldin
+                                </div>
+                            </div>
+                        </article>
+                        <div class="side-news">
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=200&fit=crop" alt="Bank tizimi">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge iqtisodiyot">Iqtisodiyot</span>
+                                    <h3><a href="#">Bank tizimida yangi raqamli xizmatlar ishga tushmoqda</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        2 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=300&h=200&fit=crop" alt="Eksport">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge iqtisodiyot">Iqtisodiyot</span>
+                                    <h3><a href="#">Eksport hajmi o'sishda davom etmoqda</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        3 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=300&h=200&fit=crop" alt="Kichik biznes">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge iqtisodiyot">Iqtisodiyot</span>
+                                    <h3><a href="#">Kichik biznes uchun yangi imtiyozlar</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        4 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sport Section -->
+                <section class="category-section">
+                    <div class="category-header">
+                        <h2>
+                            <span class="indicator sport"></span>
+                            Sport
+                        </h2>
+                        <a href="#">
+                            Barchasi
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </a>
+                    </div>
+                    <div class="category-grid">
+                        <article class="news-card">
+                            <div class="news-card-image">
+                                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop" alt="Futbol">
+                            </div>
+                            <div class="news-card-content">
+                                <span class="category-badge sport">Sport</span>
+                                <h3><a href="#">O'zbekiston futbol terma jamoasi Osiyo Kubogida muvaffaqiyat qozondi</a></h3>
+                                <p class="excerpt">Milliy terma jamoamiz Osiyo chempionatida navbatdagi g'alabani qo'lga kiritib, play-off bosqichiga ishonchli yo'l oldi.</p>
+                                <div class="meta">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    30 daqiqa oldin
+                                </div>
+                            </div>
+                        </article>
+                        <div class="side-news">
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=300&h=200&fit=crop" alt="Boks">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge sport">Sport</span>
+                                    <h3><a href="#">Yosh bokschilar xalqaro turnirda g'alaba qozondi</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        1 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=300&h=200&fit=crop" alt="Tennis">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge sport">Sport</span>
+                                    <h3><a href="#">Tennis bo'yicha yangi mavsumga tayyorgarlik</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        2 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="news-card-horizontal">
+                                <div class="news-card-image">
+                                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=200&fit=crop" alt="Kurash">
+                                </div>
+                                <div class="news-card-content">
+                                    <span class="category-badge sport">Sport</span>
+                                    <h3><a href="#">Kurash bo'yicha milliy chempionat o'tkazildi</a></h3>
+                                    <div class="meta">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                        3 soat oldin
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- Weather Widget -->
+                <div class="sidebar-widget weather-widget">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                        Ob-havo
+                    </h3>
+                    <div class="weather-main">
+                        <div>
+                            <div class="temp">+1°C</div>
+                            <div class="city">Toshkent</div>
+                        </div>
+                        <div class="weather-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16" y1="13" x2="16" y2="21"></line><line x1="8" y1="13" x2="8" y2="21"></line><line x1="12" y1="15" x2="12" y2="23"></line><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path></svg>
+                            <div class="condition">Yomg'irli</div>
+                        </div>
+                    </div>
+                    <div class="weather-forecast">
+                        <div class="day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#eab308" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                            <div class="temp">+5°</div>
+                            <div class="label">Ertaga</div>
+                        </div>
+                        <div class="day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                            <div class="temp">+3°</div>
+                            <div class="label">23-dek</div>
+                        </div>
+                        <div class="day">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16" y1="13" x2="16" y2="21"></line><line x1="8" y1="13" x2="8" y2="21"></line><line x1="12" y1="15" x2="12" y2="23"></line><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path></svg>
+                            <div class="temp">+2°</div>
+                            <div class="label">24-dek</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trending -->
+                <div class="sidebar-widget">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        Ko'p o'qilganlar
+                    </h3>
+                    <div class="trending-list">
+                        <article class="trending-item">
+                            <span class="number">01</span>
+                            <div>
+                                <h4><a href="#">Prezident yangi farmonga imzo chekdi</a></h4>
+                                <span class="time">1 soat oldin</span>
+                            </div>
+                        </article>
+                        <article class="trending-item">
+                            <span class="number">02</span>
+                            <div>
+                                <h4><a href="#">Dollar kursi bugungi holat</a></h4>
+                                <span class="time">2 soat oldin</span>
+                            </div>
+                        </article>
+                        <article class="trending-item">
+                            <span class="number">03</span>
+                            <div>
+                                <h4><a href="#">Yangi metro liniyasi ochildi</a></h4>
+                                <span class="time">3 soat oldin</span>
+                            </div>
+                        </article>
+                        <article class="trending-item">
+                            <span class="number">04</span>
+                            <div>
+                                <h4><a href="#">O'zbekiston va Qozog'iston hamkorligi</a></h4>
+                                <span class="time">4 soat oldin</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Video -->
+                <div class="sidebar-widget">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        Video yangiliklar
+                    </h3>
+                    <div class="video-list">
+                        <a href="#" class="video-item">
+                            <div class="video-thumb">
+                                <img src="https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=300&h=170&fit=crop" alt="Video">
+                                <div class="overlay">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                    </div>
+                                </div>
+                                <span class="duration">3:45</span>
+                            </div>
+                            <h4>Toshkent ko'chalaridan jonli reportaj</h4>
+                        </a>
+                        <a href="#" class="video-item">
+                            <div class="video-thumb">
+                                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=300&h=170&fit=crop" alt="Video">
+                                <div class="overlay">
+                                    <div class="play-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                                    </div>
+                                </div>
+                                <span class="duration">5:20</span>
+                            </div>
+                            <h4>Sport yangiliklari sharhi</h4>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Ad Banner -->
+                <div class="ad-banner">
+                    <div class="label">Reklama</div>
+                    <div class="placeholder">300x250</div>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<script>
+// Hero Slider
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const dots = document.querySelectorAll('.slider-dots button');
+
+function showSlide(index) {
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+}
+
+// Auto-advance slider
+setInterval(nextSlide, 6000);
+</script>
+{% endblock %}
