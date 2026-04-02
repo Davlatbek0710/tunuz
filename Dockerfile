@@ -16,7 +16,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Create documentation directory with sample files
 RUN mkdir -p /app/docs && \
-    echo "CyberGuard Systems Documentation\n\nWelcome to CyberGuard documentation portal.\nThis system provides comprehensive security solutions." > /app/docs/readme.txt && \
+    echo "FinTech Systems Documentation\n\nWelcome to FinTech documentation portal.\nThis system provides comprehensive security solutions." > /app/docs/readme.txt && \
     echo "API Guide\n\nRESTful API Endpoints:\n- GET /api/status\n- POST /api/search\n- GET /documentation/view?file=<path>" > /app/docs/api-guide.txt && \
     echo "Security Policy\n\nAll systems must comply with ISO 27001 standards.\nRegular security audits are conducted quarterly." > /app/docs/security-policy.txt && \
     echo "Changelog\n\nv2.5.0 (2024-11-01)\n- Added new documentation viewer\n- Enhanced security features\n- Bug fixes" > /app/docs/changelog.txt

@@ -1,8 +1,8 @@
-# CyberGuard Systems - LFI CTF Challenge
+# FinTech Systems - LFI CTF Challenge
 
 ## Overview
 
-CyberGuard Systems is a CTF challenge focused on **Local File Inclusion (LFI)** vulnerability. The challenge simulates a professional cybersecurity company website with a vulnerable documentation viewer.
+FinTech Systems is a CTF challenge focused on **Local File Inclusion (LFI)** vulnerability. The challenge simulates a professional cybersecurity company website with a vulnerable documentation viewer.
 
 **Objective:** Find and exploit the LFI vulnerability to read the flag from the system.
 
